@@ -16,6 +16,13 @@ public class CIT360 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        int number;
+        float decimal;
+        String aString;
+        boolean something;
+        
+        aString = "This is a test!";
     }
     
 }
