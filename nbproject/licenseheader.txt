@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}CIT 360 Sandbox Code
+${licensePrefix}Author:  Matthew Schaupp
+<#if licenseLast??>
+${licenseLast}
+</#if>
