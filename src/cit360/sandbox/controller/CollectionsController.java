@@ -30,4 +30,9 @@ public class CollectionsController {
         return null;
     }
     
+    //To get to basic: Use each type of collection (List, Set, Map, Queue, and Tree)
+    //in a program showcasing the uniqueness of that type of collection.
+    
+    
+    
 }

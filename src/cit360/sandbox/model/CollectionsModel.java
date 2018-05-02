@@ -39,16 +39,16 @@ public class CollectionsModel {
     String string25 = "Y";
     String string26 = "Z";
     
-    int one = 1;
-    int two = 2;
-    int three = 3;
-    int four = 4;
-    int five = 5;
-    int six = 6;
-    int seven = 7;
-    int eight = 8;
-    int nine = 9;
-    int ten = 10;
+    byte one = 1;
+    byte two = 2;
+    byte three = 3;
+    byte four = 4;
+    byte five = 5;
+    byte six = 6;
+    byte seven = 7;
+    byte eight = 8;
+    byte nine = 9;
+    byte ten = 10;
     
     boolean test1 = true;
     boolean test2 = true;
@@ -274,7 +274,7 @@ public class CollectionsModel {
         return one;
     }
 
-    public void setOne(int one) {
+    public void setOne(byte one) {
         this.one = one;
     }
 
@@ -282,7 +282,7 @@ public class CollectionsModel {
         return two;
     }
 
-    public void setTwo(int two) {
+    public void setTwo(byte two) {
         this.two = two;
     }
 
@@ -290,7 +290,7 @@ public class CollectionsModel {
         return three;
     }
 
-    public void setThree(int three) {
+    public void setThree(byte three) {
         this.three = three;
     }
 
@@ -298,7 +298,7 @@ public class CollectionsModel {
         return four;
     }
 
-    public void setFour(int four) {
+    public void setFour(byte four) {
         this.four = four;
     }
 
@@ -306,7 +306,7 @@ public class CollectionsModel {
         return five;
     }
 
-    public void setFive(int five) {
+    public void setFive(byte five) {
         this.five = five;
     }
 
@@ -314,7 +314,7 @@ public class CollectionsModel {
         return six;
     }
 
-    public void setSix(int six) {
+    public void setSix(byte six) {
         this.six = six;
     }
 
@@ -322,7 +322,7 @@ public class CollectionsModel {
         return seven;
     }
 
-    public void setSeven(int seven) {
+    public void setSeven(byte seven) {
         this.seven = seven;
     }
 
@@ -330,7 +330,7 @@ public class CollectionsModel {
         return eight;
     }
 
-    public void setEight(int eight) {
+    public void setEight(byte eight) {
         this.eight = eight;
     }
 
@@ -338,7 +338,7 @@ public class CollectionsModel {
         return nine;
     }
 
-    public void setNine(int nine) {
+    public void setNine(byte nine) {
         this.nine = nine;
     }
 
@@ -346,7 +346,7 @@ public class CollectionsModel {
         return ten;
     }
 
-    public void setTen(int ten) {
+    public void setTen(byte ten) {
         this.ten = ten;
     }
 
@@ -581,10 +581,7 @@ public class CollectionsModel {
         if (!Objects.equals(this.string25, other.string25)) {
             return false;
         }
-        if (!Objects.equals(this.string26, other.string26)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.string26, other.string26);
     }
 
     @Override
