@@ -12,12 +12,12 @@ import java.util.Objects;
  */
 public class CollectionsModel {
     //Here are several instance variables that will be used within collections
-    String string1 = "A";
-    String string2 = "B";
-    String string3 = "C";
-    String string4 = "D";
-    String string5 = "E";
-    String string6 = "F";
+    String string1 = "Once upon a time";
+    String string2 = "There was a family";
+    String string3 = "that lived happily";
+    String string4 = "ever after";
+    String string5 = "The";
+    String string6 = "End";
     String string7 = "G";
     String string8 = "H";
     String string9 = "I";
@@ -39,6 +39,9 @@ public class CollectionsModel {
     String string25 = "Y";
     String string26 = "Z";
     
+    String [] ABCs = {string1, string2, string3, string4, string5, string6};
+    
+    
     byte one = 1;
     byte two = 2;
     byte three = 3;
@@ -50,12 +53,16 @@ public class CollectionsModel {
     byte nine = 9;
     byte ten = 10;
     
+    byte [] numbers = {one, two, three, four, five, six};
+    
     boolean test1 = true;
     boolean test2 = true;
     boolean test3 = true;
     boolean test4 = false;
     boolean test5 = false;
     boolean test6 = false;
+    
+    boolean [] condition = {test1, test2, test3, test4, test5, test6};
 
     //Constructor method
     public CollectionsModel() {
@@ -397,6 +404,32 @@ public class CollectionsModel {
     public void setTest6(boolean test6) {
         this.test6 = test6;
     }
+
+    public String[] getABCs() {
+        return ABCs;
+    }
+
+    public void setABCs(String[] ABCs) {
+        this.ABCs = ABCs;
+    }
+
+    public byte[] getNumbers() {
+        return numbers;
+    }
+
+    public void setNumbers(byte[] numbers) {
+        this.numbers = numbers;
+    }
+
+    public boolean[] getCondition() {
+        return condition;
+    }
+
+    public void setCondition(boolean[] condition) {
+        this.condition = condition;
+    }
+    
+    
 
     @Override
     public int hashCode() {

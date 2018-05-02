@@ -6,6 +6,7 @@ package cit360.sandbox.controller;
 
 import cit360.sandbox.model.CollectionsModel;
 import cit360.sandbox.view.CollectionsView;
+import java.util.*;
 
 /**
  *
@@ -26,8 +27,9 @@ public class CollectionsController {
     
     //Method to get the model data to pass to the view
     public String modelToString() {
+        String message = "The original model data:";
         String model = collectionsData.toString();
-        collectionsDisplay.modelDisplay(model);
+        collectionsDisplay.modelDisplay(message,model);
         return null;
     }
     
@@ -36,6 +38,24 @@ public class CollectionsController {
     //To get to basic: Use each type of collection (List, Set, Map, Queue, and Tree)
     //in a program showcasing the uniqueness of that type of collection.
     
-    
+    //Method to show unigueness of List
+    public String listCollection() {
+        System.out.println("The List Collection Type:");
+        //Create a new list from the model data
+        List original = new ArrayList();
+        //Populate the new list collection
+        String[] abc = collectionsData.getABCs();
+        original.addAll(Arrays.asList(abc));
+        //Set message and send to view to display output
+        String message = "Original List:";
+        collectionsDisplay.modelDisplay(message, original);
+        
+        //The list sort method
+        message = "Sorted List:";
+        original.sort(null);
+        collectionsDisplay.modelDisplay(message, original);
+        
+        return null;
+    }
     
 }

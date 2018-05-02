@@ -3,6 +3,8 @@
  */
 package cit360.sandbox.view;
 
+import java.util.*;
+
 /**
  *
  * @author Mattn
@@ -13,9 +15,18 @@ public class CollectionsView {
     public CollectionsView() {
     }
     
-    //Method to display the model toString data
-    public String modelDisplay(String model) {
-        System.out.println(model);
+    //Overloaded display methods:
+    //Method to display message and output
+    public String modelDisplay(String message, String output) {
+        System.out.println(message);
+        System.out.println(output);
+        return null;
+    }
+    
+    //Method to display message and output
+    public String modelDisplay(String message, List output) {
+        System.out.println(message);
+        System.out.println(output);
         return null;
     }
     
