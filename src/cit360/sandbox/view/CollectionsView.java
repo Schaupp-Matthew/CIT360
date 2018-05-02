@@ -13,10 +13,10 @@ public class CollectionsView {
     public CollectionsView() {
     }
     
-    //Method to get the model to string displayed
+    //Method to display the model toString data
     public String modelDisplay(String model) {
         System.out.println(model);
-        return model;
+        return null;
     }
     
 }

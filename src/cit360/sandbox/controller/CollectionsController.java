@@ -24,11 +24,14 @@ public class CollectionsController {
     public CollectionsController() {
     }
     
+    //Method to get the model data to pass to the view
     public String modelToString() {
         String model = collectionsData.toString();
-        String modelDisplay = collectionsDisplay.modelDisplay(model);
+        collectionsDisplay.modelDisplay(model);
         return null;
     }
+    
+    
     
     //To get to basic: Use each type of collection (List, Set, Map, Queue, and Tree)
     //in a program showcasing the uniqueness of that type of collection.
