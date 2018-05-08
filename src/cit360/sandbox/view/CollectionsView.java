@@ -44,4 +44,11 @@ public class CollectionsView {
         return null;
     }
     
+    //Method to display message and output
+    public String modelDisplay(String message, Queue output) {
+        System.out.println(message);
+        System.out.println(output);
+        return null;
+    }
+    
 }

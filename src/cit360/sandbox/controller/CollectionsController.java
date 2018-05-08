@@ -65,7 +65,6 @@ public class CollectionsController {
         //Create a new set from the array
         Map<String,String> map1 = new HashMap();
         
-        map1.put("Test", "Run");
         //Loop through strings for new Map elements
         for(int i = 0; i < 6; i++) {
             String a = abc[i];
@@ -78,8 +77,23 @@ public class CollectionsController {
         collectionsDisplay.modelDisplay(message, map1);
         
         //Queue Example
+        Queue<String> queue1 = new LinkedList<String>();
+        //Populate the queue
+        for(int i = 0; i < 6; i++) {
+            queue1.add(story[i]);
+        }
         
-        //Tree Example
+        //Set message and send to the view to display output
+        message = "Queue Example:";
+        collectionsDisplay.modelDisplay(message, queue1);
+        
+        //Tree Examples
+        //Create a new set from the array
+        Set<String> tree1 = new TreeSet();
+        tree1.addAll(Arrays.asList(story));
+        //Set message and send to view to display output
+        message = "Tree Example:";
+        collectionsDisplay.modelDisplay(message, tree1);
         
         //The list sort method
         message = "Sorted List:";
