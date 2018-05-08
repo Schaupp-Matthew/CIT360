@@ -15,6 +15,13 @@ public class CollectionsView {
     public CollectionsView() {
     }
     
+    //Overloaded one parameter display methods:
+    //String display
+    public String display(String output) {
+        System.out.println(output);
+        return null;
+    }
+    
     //Overloaded display methods:
     //Method to display message and output
     public String modelDisplay(String message, String output) {

@@ -38,32 +38,83 @@ public class CollectionsController {
     //To get to basic: Use each type of collection (List, Set, Map, Queue, and Tree)
     //in a program showcasing the uniqueness of that type of collection.
     
-    //Method to show uniqueness of List
-    public String listCollection() {
-        System.out.println("\nJava Collections:");
-        //Create a new list from the model data
-        List list1 = new ArrayList();
+    //List example
+    //Method to show uniqueness of collection types
+    public String collections() {
+        collectionsDisplay.display("\nJava Collections:");
+        
         //Get arrays from model to be used with collections
         String[] abc = collectionsData.getABCs();
         String[] story = collectionsData.getStory();
         byte[] numbers = collectionsData.getNumbers();
         
+        //Create a new list from the model data
+        List list1 = new ArrayList();
+        //Convenience implementation of List from array
         list1.addAll(Arrays.asList(story));
+        //Non-convenience implementation
+        List list2 = new ArrayList();
+        list2.add(story[0]);
+        list2.add(story[1]);
         //Set message and send to view to display output
-        String message = "\nList Example:";
+        String message = "\nList Example (convenience):";
         collectionsDisplay.modelDisplay(message, list1);
+        message = "\nList Example (non-convenience):";
+        collectionsDisplay.modelDisplay(message, list2);
+        message = "\nAdding to list1 and list2:";
+        list1.add(story[2]);
+        list2.add(story[2]);
+        collectionsDisplay.modelDisplay(message, list1);
+        collectionsDisplay.modelDisplay(message, list2);
+        //The list sort method
+        message = "\nSorted List:";
+        list1.sort(null);
+        collectionsDisplay.modelDisplay(message, list1);
+        //List add at index method
+        message = "\nAdd at specific index in List:";
+        list2.add(2, "Added at index 2");
+        collectionsDisplay.modelDisplay(message, list2);
+        //List size method
+        int list1Size = list1.size();
+        int list2Size = list2.size();
+        collectionsDisplay.display("\nList1 size: " + list1Size + ""
+                + "\nList2 size: " + list2Size);
+        //Clear on list and compare both lists with isEmpty() method
+        collectionsDisplay.display("\n******Clearing List 1*******");
+        list1.clear();
+        boolean list1Empty = list1.isEmpty();
+        boolean list2Empty = list2.isEmpty();
+        collectionsDisplay.display("\nList1 is empty: " + list1Empty + ""
+                + "\nList2 is empty: " + list2Empty);
+        
         
         //Set Example
         //Create a new set from the array
         Set<String> set1 = new HashSet();
+        //Convenience implementation of Set from array
         set1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
-        message = "\nSet Example:";
+        message = "\nHashSet Example:";
         collectionsDisplay.modelDisplay(message, set1);
+        
+        Set<String> set2 = new TreeSet();
+        //Convenience implementation of Set from array
+        set2.addAll(Arrays.asList(story));
+        //Set message and send to view to display output
+        message = "\nTreeSet Example:";
+        collectionsDisplay.modelDisplay(message, set2);
+        
+        Set<String> set3 = new TreeSet();
+        //Convenience implementation of Set from array
+        set3.addAll(Arrays.asList(story));
+        //Set message and send to view to display output
+        message = "\nSortedSet Example:";
+        collectionsDisplay.modelDisplay(message, set3);
         
         //Map Example
         //Create a new set from the array
         Map<String,String> map1 = new HashMap();
+        Map map2 = new HashMap();
         
         //Loop through strings for new Map elements
         for(int i = 0; i < 6; i++) {
@@ -72,9 +123,23 @@ public class CollectionsController {
             map1.put(a, b);
         }
         
+        //Add a variety of different object types to map 
+        //without parametric types
+        map2.put(numbers[0], story[0]);
+        map2.put(numbers[1], story[1]);
+        map2.put(numbers[2], story[2]);
+        map2.put(numbers[3], story[3]);
+        map2.put(numbers[4], story[4]);
+        map2.put(numbers[5], story[5]);
+        
         //Set message and send to view to display output
         message = "\nMap Example:";
         collectionsDisplay.modelDisplay(message, map1);
+        
+        //non-parametrized map collection type has byte key/string value
+        message = "\nThis map has no parametric types";
+        message += "\nThe key is of type byte and value of type String:";
+        collectionsDisplay.modelDisplay(message, map2);
         
         //Queue Example
         Queue<String> queue1 = new LinkedList<String>();
@@ -90,15 +155,13 @@ public class CollectionsController {
         //Tree Examples
         //Create a new set from the array
         Set<String> tree1 = new TreeSet();
+        //Convenience implementation of TreeSet from array
         tree1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
         message = "\nTree Example:";
         collectionsDisplay.modelDisplay(message, tree1);
         
-        //The list sort method
-        message = "\nSorted List:";
-        list1.sort(null);
-        collectionsDisplay.modelDisplay(message, list1);
+        
         
         
         

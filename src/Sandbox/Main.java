@@ -24,7 +24,7 @@ public class Main {
         //call method to display the collections model data
         collectionsController.modelToString();
         //call method to display the list collection
-        collectionsController.listCollection();
+        collectionsController.collections();
     }
     
 }
