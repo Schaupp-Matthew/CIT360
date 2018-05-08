@@ -18,29 +18,15 @@ public class CollectionsModel {
     String string4 = "ever after";
     String string5 = "The";
     String string6 = "End";
-    String string7 = "G";
-    String string8 = "H";
-    String string9 = "I";
-    String string10 = "J";
-    String string11 = "K";
-    String string12 = "L";
-    String string13 = "M";
-    String string14 = "N";
-    String string15 = "O";
-    String string16 = "P";
-    String string17 = "Q";
-    String string18 = "R";
-    String string19 = "S";
-    String string20 = "T";
-    String string21 = "U";
-    String string22 = "V";
-    String string23 = "W";
-    String string24 = "X";
-    String string25 = "Y";
-    String string26 = "Z";
+    String string7 = "A";
+    String string8 = "B";
+    String string9 = "C";
+    String string10 = "D";
+    String string11 = "E";
+    String string12 = "F";
     
-    String [] ABCs = {string1, string2, string3, string4, string5, string6};
-    
+    String [] story = {string1, string2, string3, string4, string5, string6, string1, string2, string3, string4, string5, string6};
+    String [] ABCs = {string7, string8, string9, string10, string11, string12};
     
     byte one = 1;
     byte two = 2;
@@ -53,7 +39,7 @@ public class CollectionsModel {
     byte nine = 9;
     byte ten = 10;
     
-    byte [] numbers = {one, two, three, four, five, six};
+    byte [] numbers = {one, two, three, four, five, six, one, two, three, four, five, six};
     
     boolean test1 = true;
     boolean test2 = true;
@@ -62,7 +48,7 @@ public class CollectionsModel {
     boolean test5 = false;
     boolean test6 = false;
     
-    boolean [] condition = {test1, test2, test3, test4, test5, test6};
+    boolean [] condition = {test1, test2, test3, test4, test5, test6, test1, test2, test3, test4, test5, test6};
 
     //Constructor method
     public CollectionsModel() {
@@ -163,118 +149,6 @@ public class CollectionsModel {
 
     public void setString12(String string12) {
         this.string12 = string12;
-    }
-
-    public String getString13() {
-        return string13;
-    }
-
-    public void setString13(String string13) {
-        this.string13 = string13;
-    }
-
-    public String getString14() {
-        return string14;
-    }
-
-    public void setString14(String string14) {
-        this.string14 = string14;
-    }
-
-    public String getString15() {
-        return string15;
-    }
-
-    public void setString15(String string15) {
-        this.string15 = string15;
-    }
-
-    public String getString16() {
-        return string16;
-    }
-
-    public void setString16(String string16) {
-        this.string16 = string16;
-    }
-
-    public String getString17() {
-        return string17;
-    }
-
-    public void setString17(String string17) {
-        this.string17 = string17;
-    }
-
-    public String getString18() {
-        return string18;
-    }
-
-    public void setString18(String string18) {
-        this.string18 = string18;
-    }
-
-    public String getString19() {
-        return string19;
-    }
-
-    public void setString19(String string19) {
-        this.string19 = string19;
-    }
-
-    public String getString20() {
-        return string20;
-    }
-
-    public void setString20(String string20) {
-        this.string20 = string20;
-    }
-
-    public String getString21() {
-        return string21;
-    }
-
-    public void setString21(String string21) {
-        this.string21 = string21;
-    }
-
-    public String getString22() {
-        return string22;
-    }
-
-    public void setString22(String string22) {
-        this.string22 = string22;
-    }
-
-    public String getString23() {
-        return string23;
-    }
-
-    public void setString23(String string23) {
-        this.string23 = string23;
-    }
-
-    public String getString24() {
-        return string24;
-    }
-
-    public void setString24(String string24) {
-        this.string24 = string24;
-    }
-
-    public String getString25() {
-        return string25;
-    }
-
-    public void setString25(String string25) {
-        this.string25 = string25;
-    }
-
-    public String getString26() {
-        return string26;
-    }
-
-    public void setString26(String string26) {
-        this.string26 = string26;
     }
 
     public int getOne() {
@@ -413,6 +287,14 @@ public class CollectionsModel {
         this.ABCs = ABCs;
     }
 
+    public String[] getStory() {
+        return story;
+    }
+
+    public void setStory(String[] story) {
+        this.story = story;
+    }
+
     public byte[] getNumbers() {
         return numbers;
     }
@@ -446,20 +328,6 @@ public class CollectionsModel {
         hash = 67 * hash + Objects.hashCode(this.string10);
         hash = 67 * hash + Objects.hashCode(this.string11);
         hash = 67 * hash + Objects.hashCode(this.string12);
-        hash = 67 * hash + Objects.hashCode(this.string13);
-        hash = 67 * hash + Objects.hashCode(this.string14);
-        hash = 67 * hash + Objects.hashCode(this.string15);
-        hash = 67 * hash + Objects.hashCode(this.string16);
-        hash = 67 * hash + Objects.hashCode(this.string17);
-        hash = 67 * hash + Objects.hashCode(this.string18);
-        hash = 67 * hash + Objects.hashCode(this.string19);
-        hash = 67 * hash + Objects.hashCode(this.string20);
-        hash = 67 * hash + Objects.hashCode(this.string21);
-        hash = 67 * hash + Objects.hashCode(this.string22);
-        hash = 67 * hash + Objects.hashCode(this.string23);
-        hash = 67 * hash + Objects.hashCode(this.string24);
-        hash = 67 * hash + Objects.hashCode(this.string25);
-        hash = 67 * hash + Objects.hashCode(this.string26);
         hash = 67 * hash + this.one;
         hash = 67 * hash + this.two;
         hash = 67 * hash + this.three;
@@ -575,51 +443,12 @@ public class CollectionsModel {
         if (!Objects.equals(this.string12, other.string12)) {
             return false;
         }
-        if (!Objects.equals(this.string13, other.string13)) {
-            return false;
-        }
-        if (!Objects.equals(this.string14, other.string14)) {
-            return false;
-        }
-        if (!Objects.equals(this.string15, other.string15)) {
-            return false;
-        }
-        if (!Objects.equals(this.string16, other.string16)) {
-            return false;
-        }
-        if (!Objects.equals(this.string17, other.string17)) {
-            return false;
-        }
-        if (!Objects.equals(this.string18, other.string18)) {
-            return false;
-        }
-        if (!Objects.equals(this.string19, other.string19)) {
-            return false;
-        }
-        if (!Objects.equals(this.string20, other.string20)) {
-            return false;
-        }
-        if (!Objects.equals(this.string21, other.string21)) {
-            return false;
-        }
-        if (!Objects.equals(this.string22, other.string22)) {
-            return false;
-        }
-        if (!Objects.equals(this.string23, other.string23)) {
-            return false;
-        }
-        if (!Objects.equals(this.string24, other.string24)) {
-            return false;
-        }
-        if (!Objects.equals(this.string25, other.string25)) {
-            return false;
-        }
-        return Objects.equals(this.string26, other.string26);
+        return false;
     }
 
     @Override
     public String toString() {
-        return "CollectionsModel{" + "string1=" + string1 + ", string2=" + string2 + ", string3=" + string3 + ", string4=" + string4 + ", string5=" + string5 + ", string6=" + string6 + ", string7=" + string7 + ", string8=" + string8 + ", string9=" + string9 + ", string10=" + string10 + ", string11=" + string11 + ", string12=" + string12 + ", string13=" + string13 + ", string14=" + string14 + ", string15=" + string15 + ", string16=" + string16 + ", string17=" + string17 + ", string18=" + string18 + ", string19=" + string19 + ", string20=" + string20 + ", string21=" + string21 + ", string22=" + string22 + ", string23=" + string23 + ", string24=" + string24 + ", string25=" + string25 + ", string26=" + string26 + ", one=" + one + ", two=" + two + ", three=" + three + ", four=" + four + ", five=" + five + ", six=" + six + ", seven=" + seven + ", eight=" + eight + ", nine=" + nine + ", ten=" + ten + ", test1=" + test1 + ", test2=" + test2 + ", test3=" + test3 + ", test4=" + test4 + ", test5=" + test5 + ", test6=" + test6 + '}';
+        return "CollectionsModel{" + "string1=" + string1 + ", string2=" + string2 + ", string3=" + string3 + ", string4=" + string4 + ", string5=" + string5 + ", string6=" + string6 + ", string7=" + string7 + ", string8=" + string8 + ", string9=" + string9 + ", string10=" + string10 + ", string11=" + string11 + ", string12=" + string12 +  ", one=" + one + ", two=" + two + ", three=" + three + ", four=" + four + ", five=" + five + ", six=" + six + ", seven=" + seven + ", eight=" + eight + ", nine=" + nine + ", ten=" + ten + ", test1=" + test1 + ", test2=" + test2 + ", test3=" + test3 + ", test4=" + test4 + ", test5=" + test5 + ", test6=" + test6 + '}';
     }
     
     
