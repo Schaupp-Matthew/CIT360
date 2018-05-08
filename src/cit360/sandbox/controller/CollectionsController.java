@@ -27,7 +27,7 @@ public class CollectionsController {
     
     //Method to get the model data to pass to the view
     public String modelToString() {
-        String message = "The original model data:";
+        String message = "\nThe original model data:";
         String model = collectionsData.toString();
         collectionsDisplay.modelDisplay(message,model);
         return null;
@@ -40,7 +40,7 @@ public class CollectionsController {
     
     //Method to show uniqueness of List
     public String listCollection() {
-        System.out.println("Java Collections:");
+        System.out.println("\nJava Collections:");
         //Create a new list from the model data
         List list1 = new ArrayList();
         //Get arrays from model to be used with collections
@@ -50,7 +50,7 @@ public class CollectionsController {
         
         list1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
-        String message = "List Example:";
+        String message = "\nList Example:";
         collectionsDisplay.modelDisplay(message, list1);
         
         //Set Example
@@ -58,7 +58,7 @@ public class CollectionsController {
         Set<String> set1 = new HashSet();
         set1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
-        message = "Set Example:";
+        message = "\nSet Example:";
         collectionsDisplay.modelDisplay(message, set1);
         
         //Map Example
@@ -73,7 +73,7 @@ public class CollectionsController {
         }
         
         //Set message and send to view to display output
-        message = "Map Example:";
+        message = "\nMap Example:";
         collectionsDisplay.modelDisplay(message, map1);
         
         //Queue Example
@@ -84,7 +84,7 @@ public class CollectionsController {
         }
         
         //Set message and send to the view to display output
-        message = "Queue Example:";
+        message = "\nQueue Example:";
         collectionsDisplay.modelDisplay(message, queue1);
         
         //Tree Examples
@@ -92,11 +92,11 @@ public class CollectionsController {
         Set<String> tree1 = new TreeSet();
         tree1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
-        message = "Tree Example:";
+        message = "\nTree Example:";
         collectionsDisplay.modelDisplay(message, tree1);
         
         //The list sort method
-        message = "Sorted List:";
+        message = "\nSorted List:";
         list1.sort(null);
         collectionsDisplay.modelDisplay(message, list1);
         
