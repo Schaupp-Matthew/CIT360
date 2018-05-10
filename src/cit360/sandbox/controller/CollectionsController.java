@@ -5,6 +5,7 @@
 package cit360.sandbox.controller;
 
 import cit360.sandbox.model.CollectionsModel;
+import cit360.sandbox.model.Products;
 import cit360.sandbox.view.CollectionsView;
 import java.util.*;
 
@@ -142,7 +143,7 @@ public class CollectionsController {
         collectionsDisplay.modelDisplay(message, map2);
         
         //Queue Example
-        Queue<String> queue1 = new LinkedList<String>();
+        Queue<String> queue1 = new LinkedList<>();
         //Populate the queue
         for(int i = 0; i < 6; i++) {
             queue1.add(story[i]);
@@ -161,9 +162,33 @@ public class CollectionsController {
         message = "\nTree Example:";
         collectionsDisplay.modelDisplay(message, tree1);
         
-        
-        
-        
+        //Collection examples of object, not just primitive datatypes
+        //This collection will be a Map holding the previous collections as well 
+        //as instances of the Products class
+        Map collections = new TreeMap();
+        //Constructor method: public Products(String name, int stock, String vendor, double price)
+        Products cereal1 = new Products("Cheereos", 100, "General Mills", 3.50);
+        Products cereal2 = new Products("Great Grains", 50, "General Mills", 3.25);
+        Products cereal3 = new Products("Cinnamon Toast Crunch", 150, "General Mills", 3.50);
+        //Create Map and put cereal objects inside
+        Map cereals = new HashMap();
+        cereals.put(1, cereal1);
+        cereals.put(2, cereal2);
+        cereals.put(3, cereal3);
+        //Now add all the previous collections into this collection
+        collections.put("cereals", cereals);
+        collections.put("tree1", tree1);
+        collections.put("queue1", queue1);
+        collections.put("map2", map2);
+        collections.put("map1", map1);
+        collections.put("set3", set3);
+        collections.put("set2", set2);
+        collections.put("set1", set1);
+        collections.put("list2", list2);
+        collections.put("list1", list1);
+        //Now lets see what this complicated collection looks like
+        message = "\nMap of all collections:";
+        collectionsDisplay.modelDisplay(message, collections);
         
         return null;
     }
