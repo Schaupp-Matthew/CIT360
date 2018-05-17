@@ -9,10 +9,10 @@ import java.util.*;
  *
  * @author Mattn
  */
-public class CollectionsView {
+public class View {
 
     //Constructor method
-    public CollectionsView() {
+    public View() {
     }
     
     //Overloaded one parameter display methods:

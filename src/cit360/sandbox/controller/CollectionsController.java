@@ -6,7 +6,7 @@ package cit360.sandbox.controller;
 
 import cit360.sandbox.model.CollectionsModel;
 import cit360.sandbox.model.Products;
-import cit360.sandbox.view.CollectionsView;
+import cit360.sandbox.view.View;
 import java.util.*;
 
 /**
@@ -17,10 +17,30 @@ public class CollectionsController {
     
     //Create an instance variable of the CollectionsView class which will 
     //hold all of the methods to display the various views for this part of the program
-    CollectionsView collectionsDisplay = new CollectionsView();
+    View collectionsDisplay = new View();
     //Create an instance variable of the CollectionsModel class which will 
     //hold all of the data for the collections
     CollectionsModel collectionsData = new CollectionsModel();
+    //Get arrays from model to be used with collections
+        public String[] abc = collectionsData.getABCs();
+        public String[] story = collectionsData.getStory();
+        public byte[] numbers = collectionsData.getNumbers();
+    //Create a new list from the model data
+        List list1 = new ArrayList();
+    //Non-convenience implementation
+        List list2 = new ArrayList();
+    //Create a new set from the array
+        Set<String> set1 = new HashSet();
+        Set<String> set2 = new TreeSet();
+        Set<String> set3 = new TreeSet();
+    //Create a new Map from the array
+        Map<String,String> map1 = new HashMap();
+        Map map2 = new HashMap();
+    //Queue
+        Queue<String> queue1 = new LinkedList<>();
+    //Create a new set from the array
+        Set<String> tree1 = new TreeSet();
+    
     
     //Constructor method
     public CollectionsController() {
@@ -41,20 +61,20 @@ public class CollectionsController {
     
     //List example
     //Method to show uniqueness of collection types
-    public String collections() {
+    public void collectionsList() {
         collectionsDisplay.display("\nJava Collections:");
         
-        //Get arrays from model to be used with collections
-        String[] abc = collectionsData.getABCs();
-        String[] story = collectionsData.getStory();
-        byte[] numbers = collectionsData.getNumbers();
+//        //Get arrays from model to be used with collections
+//        String[] abc = collectionsData.getABCs();
+//        String[] story = collectionsData.getStory();
+//        byte[] numbers = collectionsData.getNumbers();
         
-        //Create a new list from the model data
-        List list1 = new ArrayList();
+//        //Create a new list from the model data
+//        List list1 = new ArrayList();
         //Convenience implementation of List from array
         list1.addAll(Arrays.asList(story));
-        //Non-convenience implementation
-        List list2 = new ArrayList();
+//        //Non-convenience implementation
+//        List list2 = new ArrayList();
         list2.add(story[0]);
         list2.add(story[1]);
         //Set message and send to view to display output
@@ -87,35 +107,42 @@ public class CollectionsController {
         boolean list2Empty = list2.isEmpty();
         collectionsDisplay.display("\nList1 is empty: " + list1Empty + ""
                 + "\nList2 is empty: " + list2Empty);
+    }
         
-        
-        //Set Example
-        //Create a new set from the array
-        Set<String> set1 = new HashSet();
+    //Set Example
+    public void collectionsSet() {
+        //Create message varialbe
+        String message;
+//        //Create a new set from the array
+//        Set<String> set1 = new HashSet();
         //Convenience implementation of Set from array
         set1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
         message = "\nHashSet Example:";
         collectionsDisplay.modelDisplay(message, set1);
         
-        Set<String> set2 = new TreeSet();
+//        Set<String> set2 = new TreeSet();
         //Convenience implementation of Set from array
         set2.addAll(Arrays.asList(story));
         //Set message and send to view to display output
         message = "\nTreeSet Example:";
         collectionsDisplay.modelDisplay(message, set2);
         
-        Set<String> set3 = new TreeSet();
+//        Set<String> set3 = new TreeSet();
         //Convenience implementation of Set from array
         set3.addAll(Arrays.asList(story));
         //Set message and send to view to display output
         message = "\nSortedSet Example:";
         collectionsDisplay.modelDisplay(message, set3);
+        }
         
-        //Map Example
-        //Create a new set from the array
-        Map<String,String> map1 = new HashMap();
-        Map map2 = new HashMap();
+    //Map Example
+    public void collectionsMap() {
+        //Create message varialbe
+        String message;
+//        //Create a new set from the array
+//        Map<String,String> map1 = new HashMap();
+//        Map map2 = new HashMap();
         
         //Loop through strings for new Map elements
         for(int i = 0; i < 6; i++) {
@@ -141,9 +168,13 @@ public class CollectionsController {
         message = "\nThis map has no parametric types";
         message += "\nThe key is of type byte and value of type String:";
         collectionsDisplay.modelDisplay(message, map2);
+    }
         
-        //Queue Example
-        Queue<String> queue1 = new LinkedList<>();
+    //Queue Example
+    public void collectionsQueue() {
+        //Create message varialbe
+        String message;
+//        Queue<String> queue1 = new LinkedList<>();
         //Populate the queue
         for(int i = 0; i < 6; i++) {
             queue1.add(story[i]);
@@ -152,19 +183,27 @@ public class CollectionsController {
         //Set message and send to the view to display output
         message = "\nQueue Example:";
         collectionsDisplay.modelDisplay(message, queue1);
+    }
         
-        //Tree Examples
-        //Create a new set from the array
-        Set<String> tree1 = new TreeSet();
+    //Tree Examples
+    public void collectionsTree() {
+        //Create message varialbe
+        String message;
+//        //Create a new set from the array
+//        Set<String> tree1 = new TreeSet();
         //Convenience implementation of TreeSet from array
         tree1.addAll(Arrays.asList(story));
         //Set message and send to view to display output
         message = "\nTree Example:";
         collectionsDisplay.modelDisplay(message, tree1);
+    }
         
         //Collection examples of object, not just primitive datatypes
         //This collection will be a Map holding the previous collections as well 
         //as instances of the Products class
+    public void collectionsTreeMap() {
+        //Create message varialbe
+        String message;
         Map collections = new TreeMap();
         //Constructor method: public Products(String name, int stock, String vendor, double price)
         Products cereal1 = new Products("Cheereos", 100, "General Mills", 3.50);
@@ -190,7 +229,6 @@ public class CollectionsController {
         message = "\nMap of all collections:";
         collectionsDisplay.modelDisplay(message, collections);
         
-        return null;
     }
     
 }
