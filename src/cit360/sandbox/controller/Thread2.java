@@ -4,6 +4,7 @@
  */
 package cit360.sandbox.controller;
 
+import cit360.sandbox.model.CollectionsModel;
 import cit360.sandbox.view.View;
 
 /**
@@ -12,8 +13,9 @@ import cit360.sandbox.view.View;
  */
 public class Thread2 extends Thread {
 
-    public Thread2(String name) {
+    public Thread2(String name, CollectionsModel model) {
         threadName = name;
+        this.model = model;
     }
     
     //Atomic variable
@@ -22,6 +24,8 @@ public class Thread2 extends Thread {
     public String threadName;
     //View instantiation
     View display = new View();
+    //Atomic variable access
+    public CollectionsModel model;
     
     @Override
     public void run() {
@@ -36,7 +40,8 @@ public class Thread2 extends Thread {
                 message = threadName + " interupted!";
                 display.display(message);
             }
-            message = threadName + "count = " + count;
+            model.atomic = count;
+            message = threadName + " count = " + count + " and atomic = " + model.atomic;
             display.display(message);
             this.number = count;
         }

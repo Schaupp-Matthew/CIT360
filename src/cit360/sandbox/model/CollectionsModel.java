@@ -11,6 +11,11 @@ import java.util.Objects;
  * @author Mattn
  */
 public class CollectionsModel {
+    
+    //Atomic variable
+    public int atomic = 0;
+    
+    
     //Here are several instance variables that will be used within collections
     String string1 = "Once upon a time";
     String string2 = "There was a family";

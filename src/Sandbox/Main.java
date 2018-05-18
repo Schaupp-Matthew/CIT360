@@ -8,6 +8,9 @@ import cit360.sandbox.controller.Runnable2;
 import cit360.sandbox.controller.RunnableController;
 import cit360.sandbox.controller.Thread2;
 import cit360.sandbox.controller.ThreadController;
+import cit360.sandbox.model.CollectionsModel;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 //import cit360.sandbox.model.CollectionsModel;
 //import cit360.sandbox.view.CollectionsView;
 
@@ -16,7 +19,29 @@ import cit360.sandbox.controller.ThreadController;
  * @author Mattn
  */
 public class Main {
+    //Create variables for input and output
+    public static PrintWriter outPut = null;
+    public static BufferedReader inPut = null;
+    
 
+    public static PrintWriter getOutPut() {
+        return outPut;
+    }
+
+    public static void setOutPut(PrintWriter outPut) {
+        Main.outPut = outPut;
+    }
+
+    public static BufferedReader getInPut() {
+        return inPut;
+    }
+
+    public static void setInPut(BufferedReader inPut) {
+        Main.inPut = inPut;
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -43,17 +68,21 @@ public class Main {
 
 
         
+
+        //Create instance of model
+        CollectionsModel model = new CollectionsModel();
         //Create an instance variable of the Thread and Runnable classes
         ThreadController threadController = new ThreadController();
         RunnableController runnableController = new RunnableController();
-        Thread2 thread2 = new Thread2("Thread2");
-        Thread2 thread3 = new Thread2("Thread3");
-        Thread2 thread4 = new Thread2("Thread4");
-        Thread2 thread5 = new Thread2("Thread5");
-        Runnable2 runnable2 = new Runnable2("Runnable2");
-        Runnable2 runnable3 = new Runnable2("Runnable3");
-        Runnable2 runnable4 = new Runnable2("Runnable4");
-        Runnable2 runnable5 = new Runnable2("Runnable5");
+        Thread2 thread2 = new Thread2("Thread2", model);
+        Thread2 thread3 = new Thread2("Thread3", model);
+        Thread2 thread4 = new Thread2("Thread4", model);
+        Thread2 thread5 = new Thread2("Thread5", model);
+        Runnable2 runnable2 = new Runnable2("Runnable2", model);
+        Runnable2 runnable3 = new Runnable2("Runnable3", model);
+        Runnable2 runnable4 = new Runnable2("Runnable4", model);
+        Runnable2 runnable5 = new Runnable2("Runnable5", model);
+        
         
         //Start threadController thread
         threadController.start();

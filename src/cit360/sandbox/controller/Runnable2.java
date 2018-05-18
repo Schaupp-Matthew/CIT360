@@ -4,6 +4,7 @@
  */
 package cit360.sandbox.controller;
 
+import cit360.sandbox.model.CollectionsModel;
 import cit360.sandbox.view.View;
 
 /**
@@ -12,10 +13,13 @@ import cit360.sandbox.view.View;
  */
 public class Runnable2 implements Runnable {
 
-    public Runnable2(String name) {
+    public Runnable2(String name, CollectionsModel model) {
         this.name = name;
+        this.model = model;
     }
     
+    //Atomic variable access
+    public CollectionsModel model;
     public String name;
     View display = new View();
     
@@ -32,7 +36,8 @@ public class Runnable2 implements Runnable {
                 message = name + " interupted!";
                 display.display(message);
             }
-            message = name + "count = " + count;
+            model.atomic = count;
+            message = name + "count = " + count + " and atomic = " + model.atomic;
             display.display(message);
         }
         //Output when thread is complete
