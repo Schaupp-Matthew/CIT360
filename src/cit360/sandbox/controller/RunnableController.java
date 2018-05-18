@@ -28,7 +28,7 @@ public class RunnableController implements Runnable {
     public void run() {
         //Create message variable for output
         String message = "\n\n================================"
-                + "\nThis is a Runnable!"
+                + "\nThis is Runnable1!"
                 + "\n================================";
         display.display(message);
         //Create and initialize array
@@ -40,7 +40,7 @@ public class RunnableController implements Runnable {
         //Display counting as output
         for(int i = 0; i < numbers.size(); i++) {
             try {
-                message = "Runnable: Number " + numbers.get(i);
+                message = "Runnable1: Number " + numbers.get(i);
                 Thread.sleep(1000);
                 display.display(message);
             } catch (InterruptedException ex) {

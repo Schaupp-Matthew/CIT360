@@ -28,7 +28,7 @@ public class ThreadController extends Thread {
     @Override
     public void run() {
         String message = "\n\n================================"
-                + "\nThis is a thread!"
+                + "\nThis is a thread1!"
                 + "\nThread name: " + this.getName()
                 + "\n================================";
         display.display(message);
