@@ -28,7 +28,7 @@ public class Thread2 extends Thread {
     public CollectionsModel model;
     
     @Override
-    public void run() {
+    public synchronized void run() {
         //Display start of thread in view
         String message = "Starting " + threadName + "!";
         display.display(message);
@@ -46,7 +46,8 @@ public class Thread2 extends Thread {
             this.number = count;
         }
         //Output when thread is complete
-        message = threadName + " complete and count = " + number;
+        message = "\nThere are " + Thread.activeCount() + " thread(s)." 
+                + threadName + " complete and count = " + number;
         display.display(message);
     }
 

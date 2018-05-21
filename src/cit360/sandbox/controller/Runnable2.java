@@ -24,7 +24,7 @@ public class Runnable2 implements Runnable {
     View display = new View();
     
     @Override
-    public void run() {
+    public synchronized void run() {
         //Display start of thread in view
         String message = "Starting " + name + "!";
         display.display(message);
@@ -41,7 +41,9 @@ public class Runnable2 implements Runnable {
             display.display(message);
         }
         //Output when thread is complete
-        message = name + "complete!";
+        
+        message = "There are " + Thread.activeCount() + " thread(s) running. " 
+                + name + "complete!";
         display.display(message);
     }
 

@@ -26,24 +26,25 @@ public class ThreadController extends Thread {
     }
     
     @Override
-    public void run() {
+    public synchronized void run() {
         String message = "\n\n================================"
                 + "\nThis is a thread1!"
-                + "\nThread name: " + this.getName()
+                + "\nThere are " + Thread.activeCount() + " thread(s) running."
+                + "\nThread1 name: " + this.getName()
                 + "\n================================";
         display.display(message);
         int priority = this.getPriority();
         long id = this.getId();
         State state = this.getState();
-        message = "\nPriority = " + priority;
-        message = message + "\nId = " + id;
-        message = message + "\nState = " + state;
-        message = message + "\n*************Increasing thread priority to 10**************";
+        message = "\nThread1 Priority = " + priority;
+        message = message + "\nThread1 Id = " + id;
+        message = message + "\nThread1 State = " + state;
+        message = message + "\n*************Increasing Thread1 priority to 10**************";
         //Increase priority level for threadController to the max of 10
         this.setPriority(Thread.NORM_PRIORITY+5);
         priority = this.getPriority();
-        message = message + "\nPriority = " + priority;
-        message = message + "\n*************Thread sleeping for 5 seconds*****************";
+        message = message + "\nNow Thread1 Priority = " + priority;
+        message = message + "\n*************Thread1 sleeping for 5 seconds*****************";
         display.display(message);
         try {
             Thread.sleep(5000);

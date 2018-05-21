@@ -25,10 +25,11 @@ public class RunnableController implements Runnable {
     
     //override run method
     @Override
-    public void run() {
+    public synchronized void run() {
         //Create message variable for output
         String message = "\n\n================================"
                 + "\nThis is Runnable1!"
+                + "\nThere are " + Thread.activeCount() + " thread(s) running."
                 + "\n================================";
         display.display(message);
         //Create and initialize array
