@@ -18,7 +18,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -247,7 +249,7 @@ public class Main {
         //Uncomment to run Application Controller Pattern                       
         //======================================================================
         System.out.println("\n*********QCJSON Starting*************\n");
-        System.out.println("\n*********Creating Object*************\n");
+        System.out.println("\n*********Creating Objects*************\n");
         int [] arrayObj = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         GroceryProduct oreos = new GroceryProduct("Cookie", "Oreos", 100, "Nebisco", 3.50);
         DairyProduct milk = new DairyProduct("milk", "Oct 10, 2018", "2%", 100, "PET", 3.50);
@@ -262,6 +264,7 @@ public class Main {
         String jsonObj2 = JSONUtilities.stringify(oreos);
         String mapObj = JSONUtilities.stringify(jsonObj);
         
+        
         System.out.println("\n*********QCJSON String Objects*************\n");
         System.out.println("\n" + jsonArray + "\n");
         System.out.println("\n" + jsonObj1 + "\n");
@@ -269,16 +272,27 @@ public class Main {
         System.out.println("\n" + mapObj + "\n");
         
         System.out.println("\n*********Parsing QCJSON Strings back to Java Objects*************\n");
-        Object newArray = JSONUtilities.parse(jsonArray);
-        Object newOreos = JSONUtilities.parse(jsonObj2);
-        Object newMilk = JSONUtilities.parse(jsonObj1);
-        Object newMap = JSONUtilities.parse(mapObj);
+        List newArray = (List)JSONUtilities.parse(jsonArray);
+        HashMap newOreos = (HashMap)JSONUtilities.parse(jsonObj2);
+        HashMap newMilk = (HashMap)JSONUtilities.parse(jsonObj1);
+        HashMap newMap = (HashMap)JSONUtilities.parse(mapObj);
         
         System.out.println("\n*********Java Objects*************\n");
         System.out.println("\n" + newArray + "\n");
         System.out.println("\n" + newOreos + "\n");
         System.out.println("\n" + newMilk + "\n");
         System.out.println("\n" + newMap + "\n");
+        //Get oreos instance from newMap
+        HashMap theOreos = (HashMap)newMap.get("Grocery");
+        
+        System.out.println("\n*********Using the new Java Objects*************\n");
+        String message = "\nThe integer at index 5 in the array is: " + newArray.get(5) + ""
+                + " \nThe oreos costs $" + newOreos.get("price") + ""
+                + " \nThe milk costs $" + newMilk.get("price") + ""
+                + " \nWhat kind of cookies? They are " + theOreos.get("name") + "!";
+        System.out.println(message);
+        
+        
         
         //End of Main method
     }
