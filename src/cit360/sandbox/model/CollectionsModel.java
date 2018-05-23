@@ -14,7 +14,14 @@ public class CollectionsModel {
     
     //Atomic variable
     public int atomic = 0;
-    
+
+    public synchronized int getAtomic() {
+        return atomic;
+    }
+
+    public synchronized void setAtomic(int atomic) {
+        this.atomic = atomic;
+    }
     
     //Here are several instance variables that will be used within collections
     String string1 = "Once upon a time";

@@ -36,8 +36,9 @@ public class Runnable2 implements Runnable {
                 message = name + " interupted!";
                 display.display(message);
             }
-            model.atomic = count;
-            message = name + "count = " + count + " and atomic = " + model.atomic;
+//            model.atomic = count;
+            model.setAtomic(count);
+            message = name + "count = " + count + " and atomic = " + model.getAtomic();
             display.display(message);
         }
         //Output when thread is complete

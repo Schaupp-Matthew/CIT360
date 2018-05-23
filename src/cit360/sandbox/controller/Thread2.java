@@ -40,8 +40,9 @@ public class Thread2 extends Thread {
                 message = threadName + " interupted!";
                 display.display(message);
             }
-            model.atomic = count;
-            message = threadName + " count = " + count + " and atomic = " + model.atomic;
+//            model.atomic = count;
+            model.setAtomic(count);
+            message = threadName + " count = " + count + " and atomic = " + model.getAtomic();
             display.display(message);
             this.number = count;
         }
