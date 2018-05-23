@@ -4,6 +4,7 @@
  */
 package cit360.sandbox.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Objects;
  * @author Mattn
  */
 
-public class Products {
+public class Products implements Serializable{
     
     String name;
     int stock;

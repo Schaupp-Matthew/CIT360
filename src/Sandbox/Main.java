@@ -12,6 +12,8 @@ import cit360.sandbox.controller.SubtractHandler;
 import cit360.sandbox.controller.Thread2;
 import cit360.sandbox.controller.ThreadController;
 import cit360.sandbox.model.CollectionsModel;
+import cit360.sandbox.model.DairyProduct;
+import cit360.sandbox.model.GroceryProduct;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,6 +26,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.quickconnectfamily.json.JSONException;
+import org.quickconnectfamily.json.JSONUtilities;
+import org.quickconnectfamily.json.ParseException;
 //import cit360.sandbox.model.CollectionsModel;
 //import cit360.sandbox.view.CollectionsView;
 
@@ -58,7 +63,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JSONException, ParseException {
         
         //open charater stream file for end user input and output
             Main.inPut = new BufferedReader(new InputStreamReader(System.in));
@@ -237,6 +242,45 @@ public class Main {
         }
         
         appController.handleRequest("subtract", data);
+        
+        //======================================================================
+        //Uncomment to run Application Controller Pattern                       
+        //======================================================================
+        System.out.println("\n*********QCJSON Starting*************\n");
+        System.out.println("\n*********Creating Object*************\n");
+        int [] arrayObj = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        GroceryProduct oreos = new GroceryProduct("Cookie", "Oreos", 100, "Nebisco", 3.50);
+        DairyProduct milk = new DairyProduct("milk", "Oct 10, 2018", "2%", 100, "PET", 3.50);
+        HashMap<String, Object> jsonObj = new HashMap();
+        jsonObj.put("Array", arrayObj);
+        jsonObj.put("Grocery", oreos);
+        jsonObj.put("Dairy", milk);
+        
+        System.out.println("\n*********QCJSON Stringifying objects*************\n");
+        String jsonArray = JSONUtilities.stringify(arrayObj);
+        String jsonObj1 = JSONUtilities.stringify(milk);
+        String jsonObj2 = JSONUtilities.stringify(oreos);
+        String mapObj = JSONUtilities.stringify(jsonObj);
+        
+        System.out.println("\n*********QCJSON String Objects*************\n");
+        System.out.println("\n" + jsonArray + "\n");
+        System.out.println("\n" + jsonObj1 + "\n");
+        System.out.println("\n" + jsonObj2 + "\n");
+        System.out.println("\n" + mapObj + "\n");
+        
+        System.out.println("\n*********Parsing QCJSON Strings back to Java Objects*************\n");
+        Object newArray = JSONUtilities.parse(jsonArray);
+        Object newOreos = JSONUtilities.parse(jsonObj2);
+        Object newMilk = JSONUtilities.parse(jsonObj1);
+        Object newMap = JSONUtilities.parse(mapObj);
+        
+        System.out.println("\n*********Java Objects*************\n");
+        System.out.println("\n" + newArray + "\n");
+        System.out.println("\n" + newOreos + "\n");
+        System.out.println("\n" + newMilk + "\n");
+        System.out.println("\n" + newMap + "\n");
+        
+        //End of Main method
     }
     
 }
