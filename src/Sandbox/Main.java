@@ -64,6 +64,8 @@ public class Main {
     
     /**
      * @param args the command line arguments
+     * @throws org.quickconnectfamily.json.JSONException
+     * @throws org.quickconnectfamily.json.ParseException
      */
     public static void main(String[] args) throws JSONException, ParseException {
         
@@ -246,7 +248,7 @@ public class Main {
         appController.handleRequest("subtract", data);
         
         //======================================================================
-        //Uncomment to run Application Controller Pattern                       
+        //Uncomment to run QCJSON                      
         //======================================================================
         System.out.println("\n*********QCJSON Starting*************\n");
         System.out.println("\n*********Creating Objects*************\n");
@@ -287,8 +289,8 @@ public class Main {
         
         System.out.println("\n*********Using the new Java Objects*************\n");
         String message = "\nThe integer at index 5 in the array is: " + newArray.get(5) + ""
-                + " \nThe oreos costs $" + newOreos.get("price") + ""
-                + " \nThe milk costs $" + newMilk.get("price") + ""
+                + " \nThe oreos cost $" + newOreos.get("price") + ""
+                + " \nThe milk cost $" + newMilk.get("price") + ""
                 + " \nWhat kind of cookies? They are " + theOreos.get("name") + "!";
         System.out.println(message);
         
