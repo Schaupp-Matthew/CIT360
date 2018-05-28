@@ -6,6 +6,7 @@ package Sandbox;
 import cit360.sandbox.controller.AddHandler;
 import cit360.sandbox.controller.AppController;
 import cit360.sandbox.controller.CollectionsController;
+import cit360.sandbox.controller.HttpUrlSandbox;
 import cit360.sandbox.controller.Runnable2;
 import cit360.sandbox.controller.RunnableController;
 import cit360.sandbox.controller.SubtractHandler;
@@ -18,6 +19,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -295,8 +297,23 @@ public class Main {
         System.out.println(message);
         
         
+        //======================================================================
+        //Uncomment to run Http Url Connect
+        //======================================================================
         
-        //End of Main method
+        HttpUrlSandbox httpTest = new HttpUrlSandbox();
+        try {
+            httpTest.mySite();
+        } catch (MalformedURLException ex) {
+            System.out.println("Error: " + ex.getMessage());
+            System.out.println("********httpTest Failed*******");
+        }
+        
+        
+            
+            
+            //End of Main method
+        
     }
     
 }
