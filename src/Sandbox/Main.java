@@ -68,8 +68,9 @@ public class Main {
      * @param args the command line arguments
      * @throws org.quickconnectfamily.json.JSONException
      * @throws org.quickconnectfamily.json.ParseException
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) throws JSONException, ParseException {
+    public static void main(String[] args) throws JSONException, ParseException, IOException {
         
         //open charater stream file for end user input and output
             Main.inPut = new BufferedReader(new InputStreamReader(System.in));
