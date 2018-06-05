@@ -25,9 +25,10 @@ public class HttpUrlSandbox {
     View display = new View();
     String message;
     
-    public void mySite() throws MalformedURLException, IOException {
-        //Read from oracle site
-        URL site = new URL("https://schaupp-matthew.github.io/Pages/sub4");
+    public void site() throws MalformedURLException, IOException {
+        //Read from site
+        URL site = new URL("http://byui.edu");
+        
         URLConnection connect = site.openConnection();
         
         message = "\nProtocol: " + site.getProtocol() + ""
